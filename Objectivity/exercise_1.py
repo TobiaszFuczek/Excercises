@@ -31,6 +31,24 @@ class Student(Person):
     def index_Student(self):
         print(f"Index Studenta: {self.index_id}")
 
+    def __str__(self):
+        return f"{self.index_id} : {self.nazwisko}"
+
 student_1= Student("Piotr", "Zielinski", 33, 5543)
 student_1.show_all_information()
 student_1.index_Student()
+print(student_1)
+
+class Course:
+    def __init__(self):
+        self.participants = []
+    def add_to_course(self, participant):
+        self.participants.append(participant)
+    def __str__(self):
+        return print(person_1.show_full_name())
+
+course= Course()
+
+course.add_to_course(person_1)
+course.add_to_course(student_1)
+print(course)
