@@ -4,6 +4,32 @@ class Person:
         self.nazwisko= nazwisko
         self.wiek= wiek
 
+    @property
+    def imie(self):
+        return self._imie
+
+    @imie.setter
+    def imie(self, value):
+        if type(value) == str:
+            self._imie = value
+
+    @property
+    def nazwisko(self):
+        return self._nazwisko
+
+    @nazwisko.setter
+    def nazwisko(self, value):
+        if type(value) == str:
+            self._nazwisko = value
+
+    @property
+    def wiek(self):
+        return self._wiek
+
+    @wiek.setter
+    def wiek(self, value):
+        if type(value) == int and value >= 0:
+            self._wiek = value
     def show_all_data(self):
         return(f"Osoba: {self.imie}, {self.nazwisko}, {self.wiek}")
 
