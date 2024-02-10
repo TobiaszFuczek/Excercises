@@ -40,10 +40,10 @@ class Person:
         self.wiek += 1
 
 person_1= Person("Robert", "Lewandowski", 35)
-print(person_1.show_all_data())
-print(person_1.show_full_name())
-person_1.one_year_add()
-print(f"Wiek zwiekszony o 1 rok: {person_1.wiek}")
+#print(person_1.show_all_data())
+#print(person_1.show_full_name())
+#person_1.one_year_add()
+#print(f"Wiek zwiekszony o 1 rok: {person_1.wiek}")
 
 
 class Student(Person):
@@ -60,7 +60,9 @@ class Student(Person):
     def __str__(self):
         return f"{self.index_id} : {self.nazwisko}"
 
-student_1= Student("Piotr", "Zielinski", 33, 5543)
+#student_1= Student("Piotr", "Zielinski", 33, 5543)
+#person_1= Person("Robert", "Lewandowski", 35)
+student_1= Student(person_1.imie,person_1.nazwisko,person_1.wiek, 5543)
 student_1.show_all_information()
 student_1.index_Student()
 print(student_1)
@@ -71,10 +73,12 @@ class Course:
     def add_to_course(self, participant):
         self.participants.append(participant)
     def __str__(self):
-        return print(person_1.show_full_name())
+        participants_info = [str(participant) for participant in self.participants]
+        return "My Students list: " + ", ".join(participants_info)
 
 course= Course()
 
-course.add_to_course(person_1)
+
 course.add_to_course(student_1)
 print(course)
+
