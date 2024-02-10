@@ -82,3 +82,18 @@ course= Course()
 course.add_to_course(student_1)
 print(course)
 
+class AverageAge:
+    def __init__(self, course):
+        self.course = course
+
+    def calculate_average_age(self):
+        total_age = sum(person.wiek for person in self.course.participants)
+        average_age = total_age / len(self.course.participants)
+        return average_age
+
+course = Course()
+course.add_to_course(student_1)
+
+average_age_calculator = AverageAge(course)
+average_age = average_age_calculator.calculate_average_age()
+print(f"Average age of participants: {average_age}")
