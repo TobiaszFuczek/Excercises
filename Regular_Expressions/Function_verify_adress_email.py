@@ -1,10 +1,12 @@
 import re
 
-tekst= "bob1234@gmail.com"
-
 def verify_email(tekst):
-    pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
-    mail= re.findall(pattern, tekst)
-    return mail
+    pattern = r'\b[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}\b'
+    match = re.search(pattern, tekst)
+    if match:
+        return match.group()
+    else:
+        return None
 
+tekst = "bob1234@gmail.com ajajajha akaakjdkjhdhdgjhgs, anakajkjahjhsjsgjgs, jajajjkahkjahah"
 print(verify_email(tekst))
